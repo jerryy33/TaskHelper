@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_helper/home/add_entry_form.dart';
 import 'package:task_helper/settings/settings.dart';
-import 'package:task_helper/statistics/statiscttest.dart';
 import 'package:task_helper/statistics/statistics.dart';
 
 import '../template_creation/create_template.dart';
