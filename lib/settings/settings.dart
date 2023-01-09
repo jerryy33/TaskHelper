@@ -7,31 +7,25 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'App',
-      home: Scaffold(
-        appBar: AppBar(title: const Text(settingsTitle)),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text('About'),
-              onTap: () => print(''),
-            ),
-            ListTile(
-              title: Text('Theme'),
-              onTap: () => print(''),
-            ),
-            ListTile(
-              title: Text('Data Usage'),
-              onTap: () => print(''),
-            ),
-            ListTile(
-              title: Text('Delete Account'),
-              onTap: () => print(''),
-            ),
-          ],
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          title: Text('About'),
+          onTap: () => print(''),
         ),
-      ),
+        ListTile(
+          title: Text('Theme'),
+          onTap: () => print(''),
+        ),
+        ListTile(
+          title: Text('Data Usage'),
+          onTap: () => print(''),
+        ),
+        ListTile(
+          title: Text('Delete Account'),
+          onTap: () => print(''),
+        ),
+      ],
     );
   }
 }
