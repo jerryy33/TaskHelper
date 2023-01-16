@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_helper/constants.dart';
 
 import '../home/home.dart';
 
@@ -26,7 +27,7 @@ class _TemplateCreationScreenState extends State<TemplateCreationScreen> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 25),
                   child: Text(
-                    'New Template',
+                    Strings.newTemplate,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                 )
@@ -38,21 +39,22 @@ class _TemplateCreationScreenState extends State<TemplateCreationScreen> {
                   child: TextField(
                       autofocus: true,
                       maxLength: 100,
-                      decoration: InputDecoration(labelText: 'Template Name')),
+                      decoration:
+                          InputDecoration(labelText: Strings.templateName)),
                 ),
               ],
             ),
             Row(
               children: [
                 const Text(
-                  'Unit to track:',
+                  Strings.unitToTrack,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 const Spacer(),
                 Expanded(
                   child: RadioListTile<TrackableUnits>(
                     contentPadding: const EdgeInsets.all(0),
-                    title: const Text('Kilometer'),
+                    title: const Text(Strings.kilometer),
                     value: TrackableUnits.kilometer,
                     groupValue: _unit,
                     onChanged: (TrackableUnits? value) {
@@ -71,10 +73,9 @@ class _TemplateCreationScreenState extends State<TemplateCreationScreen> {
                     padding: const EdgeInsets.only(top: 20),
                     child: SwitchListTile(
                       contentPadding: const EdgeInsets.all(0),
-                      title: const Text('Dates'),
+                      title: const Text(Strings.dates),
                       isThreeLine: true,
-                      subtitle: const Text(
-                          'If Dates should be used when adding a new template entry'),
+                      subtitle: const Text(Strings.dateInfotext),
                       value: _datesIncluded,
                       onChanged: (bool value) {
                         setState(() {
@@ -98,7 +99,7 @@ class _TemplateCreationScreenState extends State<TemplateCreationScreen> {
                           MaterialPageRoute(builder: (context) => const Home()),
                         );
                       },
-                      child: const Text('Create Template')),
+                      child: const Text(Strings.templateCreation)),
                 ),
               ],
             )

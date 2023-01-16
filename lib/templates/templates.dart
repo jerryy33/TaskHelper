@@ -1,12 +1,12 @@
 class Template {
   final String name;
-  final num unit;
+  final String unit;
   final num id;
   // For now sharing a template is only possible between two users
   final num userOneId;
   final num userTwoId;
 
-  Template(this.name, this.unit, this.id, this.userOneId, this.userTwoId);
+  const Template(this.name, this.unit, this.id, this.userOneId, this.userTwoId);
 }
 
 class TemplateEntry {

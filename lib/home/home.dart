@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_helper/constants.dart';
 import 'package:task_helper/settings/settings.dart';
 import 'package:task_helper/templates/template_overview.dart';
 import '../template_creation/create_template.dart';
@@ -9,15 +10,15 @@ class Home extends StatefulWidget {
   static const navbarItemList = <NavBarItemCard>[
     NavBarItemCard(
       Icons.create,
-      'Create Template',
+      Strings.templateCreation,
     ),
     NavBarItemCard(
       Icons.home,
-      'Home',
+      Strings.home,
     ),
     NavBarItemCard(
       Icons.settings,
-      'Settings',
+      Strings.settings,
     ),
   ];
   static const navbarItemLinkList = <Widget>[
@@ -40,7 +41,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: const Text('Task Helper',
+          title: const Text(Strings.taskHelper,
               style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -54,7 +55,7 @@ class _HomeState extends State<Home> {
               TextButton(
                   onPressed: (() => print('share')),
                   child: const Text(
-                    'Share',
+                    Strings.share,
                     style: TextStyle(
                         fontSize: 22,
                         color: Colors.white,

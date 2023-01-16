@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
-
-  static const settingsTitle = 'Settings';
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         ListTile(
-          title: Text('About'),
+          title: const Text(Strings.about),
           onTap: () => print(''),
         ),
         ListTile(
-          title: Text('Theme'),
+          title: const Text(Strings.theme),
           onTap: () => print(''),
         ),
         ListTile(
-          title: Text('Data Usage'),
+          title: const Text(Strings.dataUsage),
           onTap: () => print(''),
         ),
         ListTile(
-          title: Text('Delete Account'),
+          title: const Text(Strings.deleteAccount),
           onTap: () => print(''),
         ),
       ],

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task_helper/constants.dart';
 
 import 'login.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
-
-  static const signUpTitle = 'Sign Up';
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +12,13 @@ class SignUpScreen extends StatelessWidget {
         title: 'App',
         home: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: AppBar(title: const Text(signUpTitle)),
+            appBar: AppBar(title: const Text(Strings.signUp)),
             body: const SignUp()));
   }
 }
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
-
-  static const signUpTitle = 'Sign Up';
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +31,7 @@ class SignUp extends StatelessWidget {
             children: const [
               Padding(
                 padding: EdgeInsets.only(bottom: 25),
-                child: Text(signUpTitle,
+                child: Text(Strings.signUp,
                     style:
                         TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
               ),
@@ -45,7 +42,7 @@ class SignUp extends StatelessWidget {
               child: TextField(
                   autofocus: true,
                   maxLength: 100,
-                  decoration: InputDecoration(labelText: 'User Name')),
+                  decoration: InputDecoration(labelText: Strings.userName)),
             )
           ]),
           Row(
@@ -53,7 +50,8 @@ class SignUp extends StatelessWidget {
               Expanded(
                 child: TextField(
                     maxLength: 100,
-                    decoration: InputDecoration(labelText: 'Email address')),
+                    decoration:
+                        InputDecoration(labelText: Strings.emailAddress)),
               )
             ],
           ),
@@ -62,7 +60,7 @@ class SignUp extends StatelessWidget {
               Expanded(
                 child: TextField(
                     maxLength: 100,
-                    decoration: InputDecoration(labelText: 'Password')),
+                    decoration: InputDecoration(labelText: Strings.password)),
               )
             ],
           ),
@@ -71,7 +69,8 @@ class SignUp extends StatelessWidget {
               Expanded(
                 child: TextField(
                     maxLength: 100,
-                    decoration: InputDecoration(labelText: 'Repeat password')),
+                    decoration:
+                        InputDecoration(labelText: Strings.repeatPassword)),
               )
             ],
           ),
@@ -88,7 +87,7 @@ class SignUp extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text(signUpTitle)),
+                    child: const Text(Strings.signUp)),
               )
             ],
           )

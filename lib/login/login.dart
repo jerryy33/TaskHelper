@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:task_helper/login/sign_up.dart';
 
+import '../constants.dart';
 import '../home/home.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
 
-  static const loginTitle = 'Login';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App',
       home: Scaffold(
-        appBar: AppBar(title: const Text(loginTitle)),
+        appBar: AppBar(title: const Text(Strings.loginTitle)),
         body: Container(
           alignment: Alignment.topCenter,
           margin: const EdgeInsets.only(top: 36),
@@ -23,7 +23,7 @@ class Login extends StatelessWidget {
                 children: const [
                   Padding(
                     padding: EdgeInsets.only(bottom: 25),
-                    child: Text('Sign In',
+                    child: Text(Strings.signIn,
                         style: TextStyle(
                             fontSize: 40, fontWeight: FontWeight.bold)),
                   ),
@@ -34,7 +34,7 @@ class Login extends StatelessWidget {
                   child: TextField(
                       autofocus: true,
                       maxLength: 100,
-                      decoration: InputDecoration(labelText: 'User Name')),
+                      decoration: InputDecoration(labelText: Strings.userName)),
                 )
               ]),
               Row(
@@ -42,7 +42,8 @@ class Login extends StatelessWidget {
                   Expanded(
                     child: TextField(
                         maxLength: 100,
-                        decoration: InputDecoration(labelText: 'Password')),
+                        decoration:
+                            InputDecoration(labelText: Strings.password)),
                   )
                 ],
               ),
@@ -57,7 +58,7 @@ class Login extends StatelessWidget {
                           ),
                         );
                       },
-                      child: const Text('Forgot Password')),
+                      child: const Text(Strings.forgotPasswort)),
                   Padding(
                     padding: const EdgeInsets.only(top: 22),
                     child: ElevatedButton(
@@ -68,7 +69,7 @@ class Login extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text('Log in')),
+                        child: const Text(Strings.login)),
                   )
                 ],
               )

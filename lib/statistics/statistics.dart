@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:task_helper/statistics/usage_per_month_chart.dart';
 import 'package:task_helper/statistics/usage_per_year_chart.dart';
 
+import '../constants.dart';
+
 class Statistics extends StatefulWidget {
   const Statistics({super.key});
 
@@ -24,7 +26,10 @@ class _StatisticsState extends State<Statistics> {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [Text('Total'), Text('Total User')],
+                    children: const [
+                      Text(Strings.total),
+                      Text(Strings.totalPerUser)
+                    ],
                   ),
                 ),
                 Row(
@@ -40,7 +45,10 @@ class _StatisticsState extends State<Statistics> {
                     padding: const EdgeInsets.only(bottom: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [Text('Percentage'), Text('Percentage User')],
+                      children: const [
+                        Text(Strings.percentage),
+                        Text(Strings.percentagePerUser)
+                      ],
                     ),
                   ),
                   Row(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_helper/constants.dart';
 
 class AddEntryForm extends StatefulWidget {
   const AddEntryForm({super.key});
@@ -21,7 +22,7 @@ class _AddEntryFormState extends State<AddEntryForm> {
             child: TextFormField(
               keyboardType: TextInputType.datetime,
               decoration: const InputDecoration(
-                  labelText: 'Date', icon: Icon(Icons.date_range)),
+                  labelText: Strings.date, icon: Icon(Icons.date_range)),
               autofocus: true,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -34,13 +35,13 @@ class _AddEntryFormState extends State<AddEntryForm> {
           Expanded(
             child: TextFormField(
               keyboardType: TextInputType.name,
-              decoration: const InputDecoration(labelText: 'Name'),
+              decoration: const InputDecoration(labelText: Strings.name),
             ),
           ),
           Expanded(
             child: TextFormField(
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Unit'),
+              decoration: const InputDecoration(labelText: Strings.unit),
             ),
           ),
         ]),
