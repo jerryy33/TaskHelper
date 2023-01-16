@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_helper/statistics/usage_per_month_chart.dart';
 import 'package:task_helper/statistics/usage_per_year_chart.dart';
 
-import '../constants.dart';
+import '../constants/strings.dart';
 
 class Statistics extends StatefulWidget {
   const Statistics({super.key});

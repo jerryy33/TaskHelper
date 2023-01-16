@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_helper/constants.dart';
+import 'package:task_helper/constants/strings.dart';
 
 import 'login.dart';
 
