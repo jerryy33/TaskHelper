@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:task_helper/constants.dart';
+import 'package:task_helper/constants/strings.dart';
 import 'package:task_helper/templates/templates.dart';
 
 import '../home/add_entry_form.dart';
@@ -18,6 +18,7 @@ class CurrentTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
     return Container(
       alignment: Alignment.topCenter,
       margin: const EdgeInsets.only(top: 20),
@@ -58,10 +59,14 @@ class CurrentTemplate extends StatelessWidget {
                         title: const Text(Strings.addNewEntry),
                         clipBehavior: Clip.none,
                         scrollable: true,
-                        content: const AddEntryForm(),
+                        content: AddEntryForm(formKey),
                         actions: [
                           ElevatedButton(
-                              onPressed: (() => print('add')),
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  print('saved');
+                                }
+                              },
                               child: const Text(Strings.save))
                         ],
                       );

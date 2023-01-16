@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_helper/constants.dart';
+import 'package:task_helper/constants/strings.dart';
 import 'package:task_helper/settings/settings.dart';
 import 'package:task_helper/templates/template_overview.dart';
 import '../template_creation/create_template.dart';
