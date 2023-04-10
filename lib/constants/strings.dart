@@ -53,5 +53,5 @@ class Strings {
 
   // Units
   static const String kilometer = 'Kilometer';
-  static const String simpleDateFormat = "mm-dd-yyyy";
+  static const String germanShortDateFormat = "mm.dd.yy";
 }
