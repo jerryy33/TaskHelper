@@ -44,13 +44,28 @@ class _TemplateCreationScreenState extends State<TemplateCreationScreen> {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Divider(color: Colors.black),
+                  ),
+                  Row(children: const [
+                    Text(
+                      Strings.unitToTrack,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 16),
+                    ),
+                  ]),
+                ],
+              ),
+            ),
             Row(
               children: [
-                const Text(
-                  Strings.unitToTrack,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-                const Spacer(),
                 Expanded(
                   child: RadioListTile<TrackableUnits>(
                     contentPadding: const EdgeInsets.all(0),

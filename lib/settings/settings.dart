@@ -8,7 +8,9 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: <Widget>[
+        children: ListTile.divideTiles(
+      context: context,
+      tiles: [
         ListTile(
           title: const Text(Strings.about),
           onTap: () => print(''),
@@ -26,6 +28,6 @@ class SettingsScreen extends StatelessWidget {
           onTap: () => print(''),
         ),
       ],
-    );
+    ).toList());
   }
 }
