@@ -248,3 +248,8 @@ GoogleService-Info.plist
 google-services.json
 # Plugins (already resolved through pubspec.yaml)
 .flutter-plugins
+.flutter-plugins-dependencies
+
+#Firebase configs
+.firebaserc
+firebase_options.dart
