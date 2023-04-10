@@ -44,6 +44,9 @@ class TemplateEntry {
       json['unitAmount'] as num,
       DateTime.parse(json['date']));
 
+  factory TemplateEntry.fromSnapshot(DocumentSnapshot snapshot) =>
+      TemplateEntry.fromJson(snapshot.data() as Map<String, dynamic>);
+
   Map<String, dynamic> toJson() => <String, dynamic>{
         'userName': userName,
         'unitAmount': unitAmount,

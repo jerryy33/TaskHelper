@@ -9,6 +9,12 @@ class TemplateRepository {
     return collection.snapshots();
   }
 
+  Stream<QuerySnapshot> getTemplateEntriesStream(num templateId) {
+    return FirebaseFirestore.instance
+        .collection('templates/$templateId/templateEntry')
+        .snapshots();
+  }
+
   Future<DocumentReference> addTemplate(Template template) {
     return collection.add(template.toJson());
   }

@@ -8,12 +8,6 @@ import 'package:task_helper/templates/templates.dart';
 class TemplateOverview extends StatelessWidget {
   const TemplateOverview({super.key});
 
-// Test data
-  static const templates = <Template>[
-    Template('name', 'km', 1, 1, 33),
-    Template('My template 1', 'miles', 1, 1, 23),
-    Template('Long Name xueiieudsiudud', 'dollar', 1, 3, 2)
-  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -59,8 +53,9 @@ class _TemplateListState extends State<TemplateList> {
   }
 
   buildList(BuildContext context, List<Template> templates) {
-    return ListView.builder(
+    return ListView.separated(
       itemCount: templates.length,
+      separatorBuilder: (context, index) => const Divider(thickness: 1),
       itemBuilder: (context, index) {
         return ListTile(
           trailing: const Icon(Icons.delete),
@@ -68,7 +63,8 @@ class _TemplateListState extends State<TemplateList> {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const CurrentTemplate(),
+                builder: (context) =>
+                    CurrentTemplate(templateId: templates[index].id),
               ),
             );
           },
