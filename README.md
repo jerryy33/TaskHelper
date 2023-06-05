@@ -1,16 +1,10 @@
-# task_helper
+# Task Helper
 
-A new Flutter project.
+## Get started
+ Execute `flutter run` and connect a mobile device to your machine (alternatively use an emulator).
 
-## Getting Started
+ Also start the firebase emulators with 
+ ```console
+ firebase emulators:start --import test/firestore_export --export-on-exit
+ ``` 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
