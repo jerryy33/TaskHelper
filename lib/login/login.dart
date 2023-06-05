@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:task_helper/login/sign_up.dart';
+import 'package:task_helper/login/user.dart';
+import 'package:task_helper/login/user_repository.dart';
+import 'package:task_helper/validator_builder.dart';
 
 import '../constants/strings.dart';
 import '../home/home.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final formKey = GlobalKey<FormState>();
+  final userRepo = UserRepository();
+  String userName = "";
+  String userPW = "";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,21 +41,31 @@ class Login extends StatelessWidget {
                   ),
                 ],
               ),
-              Row(children: const [
+              Row(children: [
                 Expanded(
-                  child: TextField(
+                  child: TextFormField(
+                      validator: ValidationBuilder()
+                          .isEmpty(validationText: "User name cannot be empty")
+                          .build(),
+                      onChanged: (value) => {userName = value},
                       autofocus: true,
                       maxLength: 100,
-                      decoration: InputDecoration(labelText: Strings.userName)),
+                      decoration:
+                          const InputDecoration(labelText: Strings.userName)),
                 )
               ]),
               Row(
-                children: const [
+                children: [
                   Expanded(
-                    child: TextField(
+                    child: TextFormField(
+                        validator: ValidationBuilder()
+                            .isEmpty(validationText: "Password cannot be empty")
+                            .build(),
+                        onChanged: (value) => {userPW = value},
+                        obscureText: true,
                         maxLength: 100,
                         decoration:
-                            InputDecoration(labelText: Strings.password)),
+                            const InputDecoration(labelText: Strings.password)),
                   )
                 ],
               ),
@@ -52,22 +74,25 @@ class Login extends StatelessWidget {
                 children: [
                   TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const SignUpScreen(),
-                          ),
-                        );
+                        print("TODO");
                       },
                       child: const Text(Strings.forgotPasswort)),
                   Padding(
                     padding: const EdgeInsets.only(top: 22),
                     child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Home(),
-                            ),
-                          );
+                        onPressed: () async {
+                          if (formKey.currentState!.validate()) {
+                            // TODO error handling in the case of no result
+                            final foundUser =
+                                await userRepo.findUser(userName, userPW);
+                            final user = User.fromJson(
+                                foundUser as Map<String, dynamic>);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Home(user: user),
+                              ),
+                            );
+                          }
                         },
                         child: const Text(Strings.login)),
                   )

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:task_helper/constants/strings.dart';
+import 'package:task_helper/login/user.dart';
 import 'package:task_helper/settings/settings.dart';
 import 'package:task_helper/templates/template_overview.dart';
 import '../template_creation/create_template.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key, required this.user});
 
+  final User user;
   static const navbarItemList = <NavBarItemCard>[
     NavBarItemCard(
       Icons.create,

@@ -22,5 +22,4 @@ class TemplateRepository {
   void updateTemplate(Template template) async {
     await collection.doc('$template.id').update(template.toJson());
   }
-  //
 }
